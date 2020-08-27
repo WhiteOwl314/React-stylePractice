@@ -44,19 +44,22 @@ function Dialog({
         title,
         children,
         confirmText,
-        cancelText
-    })
-{
+        cancelText,
+        onConfirm,
+        onCancel,
+        visible
+    }) {
+    if (!visible) return null;
     return(
         <DarkBackground>
             <DialogBlock>
                 <h3>{title}</h3>
                 <p>{children}</p>
                 <ButtonGroup>
-                    <ShortMarginButton color="gray">
+                    <ShortMarginButton color="gray" onClick={onCancel}>
                         {cancelText}
                     </ShortMarginButton>
-                    <ShortMarginButton color="pink">
+                    <ShortMarginButton color="pink" onClick={onConfirm}>
                         {confirmText}
                     </ShortMarginButton>
                 </ButtonGroup>
