@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Plus from "./components/plus/Plus";
+import "./App.scss"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+          <div className="plus">
+              {/*추가해야 할 것 :
+                size, color, outline, fullWidth
+              */}
+              <Plus
+                  color="lime"
+                  size="large"
+                  onClick={()=>console.log('클릭됨')}
+              >
+                  Plus
+              </Plus>
+              <Plus
+                  color="yellow"
+                  size="medium"
+                  outline
+              >
+                  Plus
+              </Plus>
+              <Plus
+                  color="orange"
+                  size="small"
+                  fullWidth
+              >
+                  Plus
+              </Plus>
+          </div>
+      </div>
   );
 }
 
